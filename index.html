@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MNL22TN');</script>
+        <!-- End Google Tag Manager -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Đoán Chữ</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="socket.io.js"></script>
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNL22TN"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div id="settings"></div>
+        <div id="help">
+        	<div id="help-content">
+        		<div id="close-help" style="float:right;color:red; cursor: pointer;" onclick="closeHelp()">X</div>
+        		<p>HUỚNG DẪN CHƠI</p>
+        		<ul>
+	        		<li>Nhập hết 7 chữ cái và bấm ENTER để nộp. Có thể bấm XOÁ để lùi lại.</li>
+		        	<li>Đoán chữ trong vòng 7 lượt thử.</li>
+		        	<li>Phải là từ tiếng Việt có nghĩa dài 7 chữ cái (bao gồm cả khoảng trắng)</li>
+		        	<li>Không quan trọng dấu: ví dụ, A Á Â Ă Ạ đều được, O Ô Ố Ớ đều được, vân vân... </li>
+	        	</ul>
+	        	<p style="padding-bottom: 10px;border-bottom: 1px solid var(--color-tone-4);">Sau mỗi lần đoán, màu của ô sẽ thay đổi cho thấy bạn đoán đúng sai thế nào</p>
+	        	<p>Ví dụ</p>
+	        	<div style="display:flex;flex-direction:row">
+	        		<div class="tile" style="background-color:rgb(83, 141, 78);"><div class="tile-spacer"></div><div class="tile-content">Đ</div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content">A</div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content">U</div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content"> </div></div>
+	        		<div class="tile" style="background-color:rgb(83, 141, 78);"><div class="tile-spacer"></div><div class="tile-content">Đ</div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content">Ớ</div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content">N</div></div>
+	        	</div>
+	        	<p>Chữ Đ có mặt trong đáp án và ở đúng vị trí</p>
+	        	<div style="display:flex;flex-direction:row">
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content">T</div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content">Ổ</div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content"> </div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content">T</div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content">I</div></div>
+	        		<div class="tile"><div class="tile-spacer"></div><div class="tile-content">Ê</div></div>
+	        		<div class="tile" style="background-color:rgb(181, 159, 59);"><div class="tile-spacer"></div><div class="tile-content">N</div></div>
+	        	</div>
+	        	<p style="padding-bottom: 10px;border-bottom: 1px solid var(--color-tone-4);">chữ N có mặt trong đáp án nhưng ở sai vị trí</p>
+	        	<p>Mỗi ngày sẽ có một chữ mới để đoán</p>
+        	</div>
+        </div>
+        <div id="result">
+        	<div id="result-content">test result</div>
+        </div>
+        <div id="main">
+        	<header>
+        		<div class="menu">
+					<button id="help-button" class="icon" aria-label="help" onclick="help()">?</button>
+        		</div>
+        		<div class="title">ĐOÁN CHỮ</div>
+        		<div class="menu"></div>
+        	</header>
+        	<div id="board-container">
+        		<div id="board" style="width: 350px; height: 420px;"></div>
+        	</div>
+        	<div id="keyboard">
+			</div>
+        </div>
+		<script src="script.c1506a22.js"></script>
+    </body>
+</html>

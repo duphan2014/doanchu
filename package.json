@@ -1,0 +1,16 @@
+{
+  "name": "doanchu",
+  "version": "1.0.0",
+  "description": "game doan chu",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Du Truong Phan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "fs": "0.0.1-security",
+    "node-cron": "^3.0.0"
+  }
+}
